@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Becoming Us</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav>
+        <div>Becoming Us</div>
+        <div>
+            <a href="/signup">회원가입</a>
+            <a href="/login">로그인</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>커플을 위한 성장형 웹 애플리케이션</h1>
+        <p>함께 성장하는 관계를 위한 다이어리</p>
+        <a href="/signup" class="button">지금 시작하기</a>
+    </div>
+</body>
+</html>
