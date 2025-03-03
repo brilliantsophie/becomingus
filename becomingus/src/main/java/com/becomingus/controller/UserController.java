@@ -32,8 +32,7 @@ public class UserController {
     @PostMapping("/register")
     @Operation(summary = "회원가입", description = "새로운 사용자를 등록합니다.")
     public ResponseEntity<String> registerUser(@Valid @RequestBody UserRequestDto requestDto, Locale locale) {
-        User user = userService.registerUser(requestDto.username(), requestDto.password(), requestDto.displayName(), Role.USER);
-        String message = messageSource.getMessage("user.register.success", null, locale);
+        String message = userService.registerUser(requestDto.username(), requestDto.password(), requestDto.displayName(), Role.USER, locale);
         return ResponseEntity.ok(message);
     }
 
