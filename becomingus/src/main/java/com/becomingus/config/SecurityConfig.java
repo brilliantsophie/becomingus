@@ -33,11 +33,11 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    public AuthenticationManager authenticationManager(
+            AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
     }
-
-    // 직접 AuthenticationProvider 설정하여 AuthenticationManager 생성
+    /* 직접 AuthenticationProvider 설정하여 AuthenticationManager 생성
     @Bean
     public AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -50,5 +50,5 @@ public class SecurityConfig {
                 return authProvider.authenticate(authentication);
             }
         };
-    }
+    }*/
 }

@@ -29,10 +29,11 @@ public class UserService implements UserDetailsService {
     // 회원가입 기능
     public String registerUser(String username, String password, String displayName, Role role, Locale locale) {
         // 기존 유저 중복 체크
-        if (userRepository.findByUsername(username).isPresent()) {
+        /* if (userRepository.findByUsername(username).isPresent()) {
             throw new RuntimeException(messageSource.getMessage("user.duplicate", null, locale));
         }
-        
+        */
+
         // 비밀번호 암호화 후 저장
         String encodedPassword = passwordEncoder.encode(password);
 
